@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Act5 Task Administrator</string>
-    <string name="top">All tasks completed</string>
-    <string name="bot">Nice work!</string>
+    <string name="text_box">Text composable</string>
+    <string name="text_desc">Displays text and follows the recommended Material Design guidelines.</string>
+    <string name="image_box">Image composable</string>
+    <string name="image_desc">Creates a composable that lays out and draws a given Painter class object.</string>
+    <string name="row_box">Row composable</string>
+    <string name="row_desc">A layout composable that places its children in a horizontal sequence.</string>
+    <string name="column_box">Column composable</string>
+    <string name="column_desc">A layout composable that places its children in a vertical sequence.</string>
 </resources>
