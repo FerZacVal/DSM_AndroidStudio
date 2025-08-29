@@ -1,11 +1,8 @@
 <resources>
-    <string name="app_name">Act5 Task Administrator</string>
-    <string name="text_box">Text composable</string>
-    <string name="text_desc">Displays text and follows the recommended Material Design guidelines.</string>
-    <string name="image_box">Image composable</string>
-    <string name="image_desc">Creates a composable that lays out and draws a given Painter class object.</string>
-    <string name="row_box">Row composable</string>
-    <string name="row_desc">A layout composable that places its children in a horizontal sequence.</string>
-    <string name="column_box">Column composable</string>
-    <string name="column_desc">A layout composable that places its children in a vertical sequence.</string>
+    <string name="app_name">Act6 Presentation Card</string>
+    <string name="nombre">Fernando Zacarias Valdez</string>
+    <string name="titulo">Estudiante de Ing. Sistemas</string>
+    <string name="numero">+51 936942505</string>
+    <string name="redes">FernandoZacVal</string>
+    <string name="correo">ferzac21@gmail.com</string>
 </resources>

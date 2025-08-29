@@ -4,10 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,12 +21,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
+import java.io.StringWriter
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,54 +49,55 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingContent() {
-    Column(Modifier.fillMaxWidth()) {
-        Row(Modifier.weight(1f)) {
-            CardContent(
-                title = stringResource(R.string.text_box),
-                description = stringResource(R.string.text_desc),
-                color = Color(0xFFEADDFF),
-                modifier = Modifier.weight(1f)
-            )
-            CardContent(
-                title = stringResource(R.string.image_box),
-                description = stringResource(R.string.image_desc),
-                color = Color(0xFFD0BCFF),
-                modifier = Modifier.weight(1f)
+    Column(
+        //modifier = Modifier.fillMaxWidth().fillMaxHeight()
+    ) {
+        InfoPersonal()
+        InfoContacto()
+    }
+}
+
+@Composable
+fun InfoPersonal(){
+    Row(){
+        val image = painterResource(R.drawable.blasphemous)
+        Box(){
+            Image(
+                painter = image,
+                contentDescription = null,
             )
         }
-        Row(Modifier.weight(1f)) {
-            CardContent(
-                title = stringResource(R.string.row_box),
-                description = stringResource(R.string.row_desc),
-                color = Color(0xFFB69DF8),
-                modifier = Modifier.weight(1f)
+        Column {
+            Text(
+                text = stringResource(R.string.nombre),
+                modifier = Modifier.padding(16.dp),
+                fontWeight = FontWeight.Bold
             )
-            CardContent(
-                title = stringResource(R.string.column_box),
-                description = stringResource(R.string.column_desc),
-                color = Color(0xFFF6EDFF),
-                modifier = Modifier.weight(1f)
+            Text(
+                text = stringResource(R.string.titulo),
+                modifier = Modifier.padding(12.dp)
             )
         }
     }
 }
 
 @Composable
-fun CardContent(title: String, description: String, color: Color, modifier: Modifier = Modifier
-) {
-    Column(
-        modifier = modifier.fillMaxSize().background(color).padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+fun InfoContacto(){
+    Column (
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom
+    ){
         Text(
-            text = title,
-            modifier = Modifier.padding(bottom = 16.dp),
-            fontWeight = FontWeight.Bold
+            text = stringResource(R.string.numero),
+            modifier = Modifier.padding(12.dp)
         )
         Text(
-            text = description,
-            textAlign = TextAlign.Justify
+            text = stringResource(R.string.correo),
+            modifier = Modifier.padding(12.dp)
+        )
+        Text(
+            text = stringResource(R.string.redes),
+            modifier = Modifier.padding(12.dp)
         )
     }
 }
